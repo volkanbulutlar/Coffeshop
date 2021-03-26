@@ -8,9 +8,9 @@ namespace GenericClassType
 		{
 			CustomerManager<Customer> Musteriler = new CustomerManager<Customer>();
 
-			Musteriler.Add(new Customer { Id = 1, Adı = "Volkan ", Soyadı = "Bulutlar", TcKimlikNo = "1231231414141" });
+			Musteriler.Add(new Customer (1,"Volkan ","Bulutlar", "1231231414141"));
 
-			Musteriler.Add(new Customer { Id = 1, Adı = "seda ", Soyadı = "Bulutlar", TcKimlikNo = "1231212313131414141" });
+			Musteriler.Add(new Customer (2,"Seda ", "Bulutlar","1231212313131414141" ));
 
 			foreach (var item in Musteriler.Items)
 			{
