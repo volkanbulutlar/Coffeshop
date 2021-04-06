@@ -7,7 +7,7 @@ namespace GenericClassType
 	class Customer
 	{
 
-		public Customer(int id,string adi,string soyadi,string tckimlikno)
+		public Customer(int id, string adi, string soyadi, string tckimlikno)
 		{
 			Id = id;
 			Adı = adi;
