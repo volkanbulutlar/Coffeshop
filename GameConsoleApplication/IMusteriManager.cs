@@ -4,12 +4,12 @@ using System.Text;
 
 namespace GameConsoleApplication
 {
-	interface IMusteriManager
+	interface IMusteriManager 
 	{
 
-		void Ekle(List<Musteri> musteriManagers);
-		void Guncelle(List<Musteri> musteriManagers);
-		void Sil(List<Musteri> musteriManagers);
+		void Ekle(Musteri musteri);
+		void Guncelle(Musteri musteri);
+		void Sil(Musteri musteri);
 		
 	}
 }

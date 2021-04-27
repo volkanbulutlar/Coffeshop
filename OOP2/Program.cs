@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OOP2
+namespace GenericClassType
 {
 	class Program
 	{

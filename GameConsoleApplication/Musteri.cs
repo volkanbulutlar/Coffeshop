@@ -4,8 +4,8 @@ using System.Text;
 
 namespace GameConsoleApplication
 {
-	class Musteri:MusteriManager
-	{
+	class Musteri
+	{ 
 
 
 		public int Id { get; set; }

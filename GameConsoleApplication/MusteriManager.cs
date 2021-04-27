@@ -6,36 +6,54 @@ namespace GameConsoleApplication
 {
 	class MusteriManager : IMusteriManager
 	{
+		IUserValidationService _userValidationService;
 		
-		
-		public void Ekle(List<Musteri> musteriManagers)
-		{
-			foreach (var item in musteriManagers)
-			{
-			
-					Console.WriteLine(item.Ad  + " Müşteri Eklendi.");
-							
-			}
 
+		public MusteriManager(IUserValidationService userValidationService)
+		{
+
+			_userValidationService = userValidationService;
+		}
+
+		
+
+		public void Ekle(Musteri musteri)
+		{
+			if (_userValidationService.Validate(musteri) == true)
+			{
+				Console.WriteLine(musteri.Ad + " Müşteri Eklendi.");
+			}
+			else
+			{
+				Console.WriteLine(musteri.Ad + " Müşteri Bilgisi Hatalı Kayıt Eklenemedi.");
+			}
 			
 		}
 
-		public void Guncelle(List<Musteri> musteriManagers)
+		public void Guncelle(Musteri musteri)
 		{
-			foreach (var item in musteriManagers)
+			if (_userValidationService.Validate(musteri) == true)
 			{
-				Console.WriteLine(item.Ad  +  " Müşteri Güncellendi.");
+				Console.WriteLine(musteri.Ad  +  " Müşteri Güncellendi.");
+			} 
+			else
+			{
+				Console.WriteLine(musteri.Ad + " Müşteri Bilgisi Hatalı Kayıt Güncellenemedi.");
 			}
-
 		}
 
-		public void Sil(List<Musteri> musteriManagers)
+		public void Sil(Musteri musteri)
 		{
-			foreach (var item in musteriManagers)
+
+			if (_userValidationService.Validate(musteri) == true)
 			{
-				Console.WriteLine(item.Ad + " Müşteri Silindi");
+				Console.WriteLine(musteri.Ad + " Müşteri Silindi.");
 			}
-			
+			else
+			{
+				Console.WriteLine(musteri.Ad + " Müşteri Bilgisi Hatalı Kayıt Silinemedi.");
+			}
+
 		}
 	}
 }

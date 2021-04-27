@@ -17,7 +17,7 @@ namespace OOP4
 
 			ILoggerService databaseloggerService = new DatabaseLoggerService();
 			ILoggerService fileLoggerService = new FileLoggerService();
-
+			ILoggerService smsLoggerService = new SmsLoggerService();
 
 
 
@@ -30,7 +30,7 @@ namespace OOP4
 			List<IKrediManager> krediler = new List<IKrediManager>() {ihtiyacKrediManager,tasitKrediManager};
 
 
-			basvuruManager.KrediOnBilgilendirmesiYap(krediler,new List<ILoggerService>() {new DatabaseLoggerService(),new FileLoggerService(),new SmsLoggerService()});
+			basvuruManager.KrediOnBilgilendirmesiYap(krediler,new List<ILoggerService>() { databaseloggerService, fileLoggerService, smsLoggerService });
 
 		}
 	}
